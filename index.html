@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <link rel="icon" href="icons/websitelogo.jpeg" type="image/x-icon" />
+    <title>Syncoes</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .hero-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            background: linear-gradient(90deg, #7c3aed, #2563eb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #head {
+            color: #312C2C;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .description {
+            color: #545963;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 100;
+        }
+
+        .cab,
+        .cab-left {
+            font-family: Cabin, sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.1px;
+        }
+
+        .para,
+        .para-left {
+            font-family: Cabin, sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.2px;
+        }
+
+        .scroll {
+            scrollbar-color: #055bca rgba(88, 138, 240, 0.6);
+            scrollbar-width: thin;
+        }
+
+        @media (max-width: 640px) {
+            .scroll::-webkit-scrollbar {
+                height: 6px;
+            }
+
+            .scroll::-webkit-scrollbar-thumb {
+                background: #055bca;
+                border-radius: 3px;
+            }
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden ">
+    <nav
+        class="flex bg-[#12141D]   max-sm:flex font-sans h-14 w-full items-center text-gray-200 pl-[20%] pr-[15%] max-lg:pl-[0px] max-lg:pr-[0px]">
+
+
+        <ul class="flex w-full justify-between items-center px-2 sm:px-4 max-sm:px-2 ">
+            <div class=" md:flex  w-1/3">
+                <a href="school.html">
+                    <div class="w-[200px] h-[40px]  font-bold rounded-2xl flex px-2">
+                        <img src="icons/syncoes.png" class="w-[130px] max-sm:w-[130px] h-[85%]">
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="flex max-lg:hidden justify-center items-center w-full sm:w-auto  rounded-b-2xl px-2 py-1">
+                <a href="#home" class="text-white hover:text-blue-800 px-2 sm:px-3 text-xs sm:text-base"><span
+                        class="underline text-blue-500">Home</span></a>
+                <a href="#About" class="text-white hover:text-blue-800 px-2 sm:px-3 text-xs sm:text-base">Products</a>
+                <a href="#Demo" class="text-white hover:text-blue-800 px-2 sm:px-3 text-xs sm:text-base">Resources</a>
+                <a href="#overview" class="text-white hover:text-blue-800 px-2 sm:px-3 text-xs sm:text-base">About</a>
+
+            </div>
+
+            <div class="hidden md:flex w-1/3 justify-end">
+                <div class="w-[200px]  max-lg:hidden h-[40px] flex bg-blue-500 justify-center items-center font-bold rounded-2xl text-white"
+                    style="background-color:  #2B59FF;">
+                    <a href="https://forms.gle/rUoe7iPL223UfvhC9">
+
+                        <h1>Contact Us</h1>
+                    </a>
+                </div>
+            </div>
+        </ul>
+        <div
+            class="max-lg:block hidden bg-blue-500 mr-2  w-[40px] h-[46px] flex justify-center items-center rounded-xl  ">
+            <button id="mobile-nav-btn" aria-label="Open menu" class="p-2 focus:outline-none">
+                <img src="icons/dash.png" class="w-[30px] h-[30px]" alt="Menu">
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-sidebar-overlay"
+        class="fixed inset-0 bg-black bg-opacity-40 opacity-0 pointer-events-none transition-opacity duration-300 z-40 max-lg:block">
+    </div>
+    <aside id="mobile-sidebar"
+        class="fixed inset-y-0 left-0 w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-50 max-lg:block"
+        aria-hidden="true">
+        <div class="p-4 flex items-center justify-between border-b">
+            <div class="font-bold">Menu</div>
+            <button id="mobile-nav-close" aria-label="Close menu"
+                class="p-2 focus:outline-none text-gray-600">&times;</button>
+        </div>
+        <nav class="p-4">
+            <a href="#home" class="block py-2 text-blue-500">Home</a>
+            <a href="#About" class="block py-2 text-blue-500">About</a>
+            <a href="#Demo" class="block py-2 text-blue-500">Demo</a>
+            <a href="#overview" class="block py-2 text-blue-500">Work</a>
+            <a href="#feedback" class="block py-2 text-blue-500">Feedback</a>
+            <a href="https://forms.gle/rUoe7iPL223UfvhC9" class="block py-2 text-blue-500">Prebook</a>
+
+        </nav>
+    </aside>
+
+    <section id="home" class="w-full bg-[#12141D] h-screen flex flex-col">
+
+        <div
+            class="w-full max-sm:flex-col-reverse flex justify-center max-sm:items-end  max-sm:flex-col max-sm:items-center h-screen">
+
+            <div
+                class="w-[40%] max-md:w-[50%] max-sm:w-[90%] bg-[#12141D] from-white to-gray-200 from-50% to-100% max-sm:mt-12  h-auto justify-center max-sm:mb-4 flex max-sm:h-[55%]">
+                <div class="w-full h-full flex justify-center items-center   ">
+
+                    <img src="/figma/combined4.png" alt=""
+                        class=" h-auto w-[clamp(300px,50vw,500px)] max-sm:mt-6 max-sm:ml-4 ">
+
+                </div>
+
+            </div>
+            <div
+                class="w-[40%] max-md:w-[50%]  flex flex-col max-sm:items-end justify-center items-center bg-[#12141D] max-sm:justify-between max-sm:w-[90%] max-sm:h-[26%]  h-full flex pb-12 max-sm:pb-2">
+                <div
+                    class="flex flex-col max-sm:items-center  max-sm:justify-between  justify-center w-full h-full   max-sm:ml-6 ">
+                    <div class=" max-sm:items-center flex justify-center flex-col items-center  max-sm:h-full">
+
+                        <h1
+                            class="font-bold text-white  text-[clamp(2.2rem,4vw,3.75rem)]    font-['Poppins'] text-center">
+                            <span class="underline" style="color:  #2B59FF ;">Your own</span> Education
+                            <br>App made <span class="underline" style="color:  #2B59FF ;">easy</span>
+                        </h1>
+
+                        <h1
+                            class="mt-8  font-thin text-white max-lg:text-sm text-center  text-[clamp(1rem,4vw,0.4rem)] w-[75%] max-sm:w-[95%]">
+
+                            An
+                            Built to save time, this simple and affordable app helps schools and
+                            coaching institutes manage classes, notes, attendance, and updates
+                            in one place.</h1>
+                        <div>
+                            <div class="w-[300px] max-sm:hidden h-[75px] flex justify-center items-center  text-white text-xl mt-12 max-sm:mt-2 rounded-full"
+                                style="background-color: #2B59FF;">
+                                <a href="#feedback">
+                                    <h1 class="font-bold text-2xl font-medium">Get Your App</h1>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="w-full sm:hidden justify-center  h-[20%] flex  ">
+            <div
+                class="flex w-[140px] h-[50px]  mt-6 justify-center items-center bg-[#2B59FF] text-white rounded-full relative z-10">
+                <a href="#feedback">
+                    <h1 class="font-bold text-sm  font-medium">Get Your App</h1>
+                </a>
+            </div>
+        </div>
+
+    </section>
+    <section id="About" class="flex flex-col items-center h-screen max-lg:h-auto max-sm:h-auto">
+        <div class="w-full flex  flex-col justify-center items-center h-[30%] mt-8">
+            <h1 class="text-5xl text-bold mt-12 max-sm:text-3xl" style="font-family:'Inter'; color: #312C2C; ">Explore
+                Our <span class="text-[#2B59FF]">Products</span></h1>
+            <p class="text-center w-[26%] max-lg:w-[60%] max-md:w-[70%] max-sm:w-[80%] font-normal mt-4 mb-10 "
+                style="color:#737373">
+                Choose the app designed specifically for your school or coaching institute.
+            </p>
+
+        </div>
+
+        <div
+            class="flex max-lg:mt-2  max-lg:flex-col max-lg:w-[70%] max-sm:w-[95%] max-lg:h-auto bg-[#12141D] rounded-2xl  justify-center items-center w-[70%] h-screen  ">
+
+            <div
+                class="w-[40%] max-lg:mt-2 max-lg:w-[99%] pl-12 max-sm:pl-4 pt-6 bg-[#12141D] max-sm:mt-4 h-full max-sm:h-auto">
+                <div class="bg-[#2955F4] w-[95%] h-[95%] rounded-2xl max-sm:h-auto">
+                    <div class="w-full h-full flex justify-center items-end  max-sm:h-auto">
+
+                        <img src="/figma/page2.png" alt=""
+                            class=" h-[96%]  max-sm:h-[500px]  max-sm:mx-4  mt-6 max-sm:ml-4 ">
+
+                    </div>
+                </div>
+
+            </div>
+            <div
+                class="w-[55%] max-sm:flex max-sm:flex-col max-sm:justify-center max-sm:items-center max-lg:w-[100%] h-full max-lg:h-auto">
+                <div
+                    class="w-full rounded-2xl flex flex-col max-sm:items-end justify-center items-center bg-[#12141D] max-sm:justify-between max-sm:w-[90%] max-sm:h-[26%]  h-full flex pb-12 max-sm:pb-2">
+                    <div
+                        class="flex flex-col max-sm:items-center  max-sm:justify-between  justify-center w-full h-full   max-sm:ml-6 ">
+                        <div
+                            class=" max-sm:items-center  flex justify-center flex-col items-center mt-12 max-sm:mt-4  max-sm:h-full">
+
+                            <h1
+                                class="font-bold text-white  text-[clamp(1.4rem,4vw,3rem)]    font-['Poppins'] text-center">
+                                <span class="underline" style="color:  #2B59FF ;">Syncoes</span> Coaching App,
+                                for Coaching <span class="underline" style="color:  #2B59FF ;">Institutes</span>
+                            </h1>
+
+                            <h1
+                                class="mt-2 font-thin text-white max-lg:text-sm text-center  text-[clamp(1rem,4vw,0.4rem)] w-[75%] max-sm:w-[95%]">
+
+                                An
+                                Built to save time, this simple and affordable app helps schools and
+                                coaching institutes manage classes, notes, attendance, and updates
+                                in one place.</h1>
+                            <div>
+                                <div class="w-[300px] max-sm:hidden h-[75px] flex justify-center items-center  text-white text-xl mt-12 rounded-full"
+                                    style="background-color: #2B59FF;">
+                                    <a href="#feedback">
+                                        <h1 class="font-bold text-2xl font-medium">Get Your App</h1>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="w-full sm:hidden max-sm:flex mb-8 justify-center items-center h-[20%] flex  ">
+                <div
+                    class="flex w-[140px] h-[50px]  mt-6 justify-center items-center bg-[#2B59FF] text-white rounded-full relative z-10">
+                    <a href="#feedback">
+                        <h1 class="font-bold text-sm  font-medium">Get Your App</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section id="About2" class="flex flex-col items-center justify-center h-screen max-lg:h-auto max-sm:h-auto mt-2">
+
+
+        <div
+            class="flex rounded-2xl flex-row-reverse  max-lg:flex-col mt-12 max-sm:mt-4 max-sm:w-[95%] max-lg:h-auto bg-[#12141D] rounded-2xl  justify-center items-center w-[70%] h-[80%] ">
+
+            <div
+                class="w-[40%] max-lg:mt-2 max-lg:w-[99%] pl-12 max-sm:pl-4 pt-6 bg-[#12141D] max-sm:mt-4 h-full max-sm:h-auto">
+                <div class="bg-[#2955F4] w-[95%] h-[95%] rounded-2xl max-sm:h-auto">
+                    <div class="w-full h-full flex justify-center items-end  max-sm:h-auto">
+
+                        <img src="/figma/page3.png" alt="" class=" 
+                              h-[96%]  max-sm:h-[500px]  max-sm:mx-4  mt-6 max-sm:ml-4  ">
+
+                    </div>
+                </div>
+
+            </div>
+            <div
+                class="w-[55%] max-sm:flex max-sm:flex-col max-sm:justify-center max-sm:items-center max-lg:w-[100%] h-full max-lg:h-auto">
+                <div
+                    class="w-full flex flex-col max-sm:items-end justify-center items-center bg-[#12141D] max-sm:justify-between max-sm:w-[90%] max-sm:h-[26%]  h-full flex pb-12 max-sm:pb-2">
+                    <div
+                        class="flex flex-col max-sm:items-center  max-sm:justify-between  justify-center w-full h-full   max-sm:ml-6 ">
+                        <div
+                            class=" max-sm:items-center  flex justify-center flex-col items-center mt-12 max-sm:mt-4  max-sm:h-full">
+
+                            <h1
+                                class="font-bold text-white  text-[clamp(1.4rem,4vw,3rem)]    font-['Poppins'] text-center">
+                                <span class="underline" style="color:  #2B59FF ;">Syncoes</span> School App,
+                                for Coaching <span class="underline" style="color:  #2B59FF ;">Institutes</span>
+                            </h1>
+
+                            <h1
+                                class="mt-2 font-thin text-white max-lg:text-sm text-center  text-[clamp(1rem,4vw,0.4rem)] w-[75%] max-sm:w-[95%]">
+
+                                Designed for daily school operations — manage classes, homework, attendance, notices,
+                                and parent communication effortlessly.</h1>
+                            <div>
+                                <div class="w-[300px] max-sm:hidden h-[75px] flex justify-center items-center  text-white text-xl mt-12 rounded-full"
+                                    style="background-color: #2B59FF;">
+                                    <a href="#feedback">
+                                        <h1 class="font-bold text-2xl font-medium">Get Your App</h1>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="w-full sm:hidden max-sm:flex mb-8 justify-center items-center h-[20%] flex  ">
+                <div
+                    class="flex w-[140px] h-[50px]  mt-6 justify-center items-center bg-[#2B59FF] text-white rounded-full relative z-10">
+                    <a href="#feedback">
+                        <h1 class="font-bold text-sm  font-medium">Get Your App</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="h-auto w-full mt-12">
+        <div
+            class="w-full h-[600px] max-sm:h-[550px] max-lg:h-[800px] max-lg:p-4 max-lg:flex-col max-lg:items-center  flex bg-[#12141D]">
+            <div class="w-1/2 h-full max-sm:hidden flex justify-center items-center ">
+                <img src="figma/page4.png" alt="">
+            </div>
+            <div class="flex w-1/2 max-lg:w-full max-sm:px-4 h-full max-sm:w-full flex-col justify-center gap-4">
+                <h1 class="text-5xl px-4 max-sm:px-2 text-white max-sm:text-4xl font-[Poppins]">Why Syncoes</h1>
+                <p
+                    class="text-white p-4 max-sm:px-2   text-[clamp(0.9rem,50vw,0.4rem)] w-[70%] max-lg:w-[90%] font-thin">
+                    Syncoes is a
+                    simple
+                    and affordable
+                    education app
+                    platform built
+                    for
+                    schools and
+                    coaching institutes.
+                    It works on a monthly subscription model, so you can get your own app without heavy setup or
+                    long-term commitment. Simply enter your institute code to access your app — no need to upload
+                    anything to the Play Store. Syncoes reduces manual work by bringing classes, notes, attendance, and
+                    student updates into one easy-to-use app, saving time every day without technical complexity or high
+                    costs.</p>
+                <h1 class="text-white font-bold mt-6 max-sm:mt-2 max-sm:text-sm text-gray-400">Saves Time • Affordable •
+                    Easy to Use •
+                    Built for
+                    Education</h1>
+                <div class="w-[clamp(100px,50vw,200px)] p-1 h-auto flex justify-center items-center  text-white text-xl mt-12 max-sm:mt-4 rounded-full"
+                    style="background-color: #2B59FF;">
+                    <a href="#feedback">
+                        <h1 class="font-bold text-l font-bold">Get Your App</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="w-full h-screen flex justify-center items-center max-lg:h-auto">
+        <div class="h-[70%] w-[70%] max-lg:gap-4 flex flex-col max-lg:h-auto  ">
+            <div class="w-full h-[20%] gap-2 flex flex-col justify-center items-center max-lg:h-auto ">
+                <h1 class="text-5xl font-[Poppins] max-lg:mt-12  max-lg:text-center max-sm:text-3xl">How Syncoes Works
+                </h1>
+                <p class="font-thin text-center">Get your institute app ready in minutes — no technical setup required.
+                </p>
+            </div>
+            <div class="w-full h-[80%] max-lg:flex-col flex items-center max-lg:h-auto ">
+                <div class="flex w-[30%] max-lg:w-full h-auto flex-col  justify-center items-center gap-2"><img
+                        src="figma/1.png" class="w-[150px] h-[150px]" alt="">
+                    <h1 class="text-xl text-center ">Download the Syncoes App</h1>
+                    <p class="text-center font-thin w-[90%]">Students download the Syncoes app from the Play Store — no
+                        separate
+                        app for
+                        each school or
+                        coaching institute.</p>
+                </div>
+                <div class="w-[10%] flex justify-center max-lg:h-[60px] items-center"><img src="figma/Arrow.png"
+                        class="w-[50%] max-lg:transform max-lg:rotate-90" alt="">
+                </div>
+                <div class="flex w-[30%] max-lg:w-full h-auto flex-col justify-center items-center gap-2"><img
+                        src="figma/2.png" class="w-[150px] h-[150px]" alt="">
+                    <h1 class="text-xl text-center">Enter School or Coaching Code</h1>
+                    <p class="text-center font-thin w-[90%]">Students enter their school or coaching institute code, and
+                        the app instantly switches to their institute’s app.</p>
+                </div>
+                <div class="w-[10%] flex justify-center items-center max-lg:h-[60px]"><img src="figma/Arrow.png"
+                        class="w-[50%] max-lg:transform max-lg:rotate-90 " alt="">
+                </div>
+
+                <div class="flex w-[30%] max-lg:w-full h-auto flex-col justify-center items-center gap-2"><img
+                        src="figma/Vector.png" class="w-[150px] h-[150px]" alt="">
+                    <h1 class="text-xl  text-center">Access Everything in One App</h1>
+                    <p class="text-center font-thin w-[90%]">Students can view classes, notes, attendance, tests, and
+                        updates — all from the same Syncoes app.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="w-full bg-[#12141D] h-auto mt-12 px-4 sm:px-8 py-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+                <div class="gap-2">
+                    <div><img src="figma/syncoesdot.png" alt=""></div>
+                    <h1 class="font-thin text-white ml-1 mt-8">A ready-to-use education app platform for schools and
+                        coaching
+                        institutes.
+                    </h1>
+                    <div class="flex mt-8 gap-2">
+                        <a href="https://x.com/syncoes9112">
+                            <div><img src="icons/twitter.png" alt=""></div>
+                        </a>
+                        <a href="https://www.linkedin.com/company/syncoes/">
+
+                            <div><img src="icons/link.png" alt=""></div>
+                        </a>
+                        <a href="https://www.facebook.com/share/1CDrksweNf/">
+
+                            <div><img src="icons/2.png" alt=""></div>
+                        </a>
+
+                        <a href="https://www.instagram.com/syncoes/">
+
+                            <div><img src="icons/insta.png" alt=""></div>
+                        </a>
+                        <a href="https://www.youtube.com/@syncoes">
+
+                            <div><img src="icons/yt.png" alt=""></div>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="items-end flex flex-col max-sm:items-center">
+                    <h1 class="text-base sm:text-lg lg:text-xl font-mono text-white mb-3 mr-2">Company</h1>
+                    <div class="space-y-2">
+                        <a href="#"
+                            class="block text-sm sm:text-base lg:text-lg font-medium text-gray-400 hover:text-blue-300">Services
+                        </a>
+                        <a href="#"
+                            class="block text-sm sm:text-base lg:text-lg font-medium text-gray-400 hover:text-blue-300">Resources</a>
+                        <a href="#"
+                            class="block text-sm sm:text-base lg:text-lg font-medium text-gray-400 hover:text-blue-300">About
+                            Us
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="col-span-2 sm:col-span-1 ">
+                    <h1 class="text-base sm:text-lg lg:text-xl font-mono text-white mb-3 mr-2">Help</h1>
+                    <div class="space-y-2">
+                        <a href="#"
+                            class="block text-sm sm:text-base lg:text-lg font-medium text-gray-400 hover:text-blue-300">Customer
+                            Support
+                        </a>
+                        <a href="#"
+                            class="block text-sm sm:text-base lg:text-lg font-medium text-gray-400 hover:text-blue-300">Terms
+                            & Conditions</a>
+                        <a href="#"
+                            class="block text-sm sm:text-base lg:text-lg font-medium text-gray-400 hover:text-blue-300">Privacy
+                            Policy
+                            Us
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
