@@ -17,62 +17,6 @@
         html {
             scroll-behavior: smooth;
         }
-
-        .hero-title {
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            background: linear-gradient(90deg, #7c3aed, #2563eb);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        #head {
-            color: #312C2C;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .description {
-            color: #545963;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 100;
-        }
-
-        .cab,
-        .cab-left {
-            font-family: Cabin, sans-serif;
-            font-weight: 700;
-            font-size: 16px;
-            line-height: 24px;
-            letter-spacing: 0.1px;
-        }
-
-        .para,
-        .para-left {
-            font-family: Cabin, sans-serif;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 20px;
-            letter-spacing: 0.2px;
-        }
-
-        .scroll {
-            scrollbar-color: #055bca rgba(88, 138, 240, 0.6);
-            scrollbar-width: thin;
-        }
-
-        @media (max-width: 640px) {
-            .scroll::-webkit-scrollbar {
-                height: 6px;
-            }
-
-            .scroll::-webkit-scrollbar-thumb {
-                background: #055bca;
-                border-radius: 3px;
-            }
-        }
     </style>
 </head>
 
@@ -110,13 +54,36 @@
                 </div>
             </div>
         </ul>
-        <div
-            class="max-lg:block hidden bg-blue-500 mr-2  w-[40px] h-[46px] flex justify-center items-center rounded-xl  ">
+        <div class="max-lg:block hidden  mr-2  w-[40px] h-[46px] flex justify-center items-center rounded-xl  ">
             <button id="mobile-nav-btn" aria-label="Open menu" class="p-2 focus:outline-none">
-                <img src="icons/dash.png" class="w-[30px] h-[30px]" alt="Menu">
+                <img src="icons/bars.png" class="w-[30px] h-[30px]" alt="Menu">
             </button>
         </div>
     </nav>
+    <aside id="mobile-sidebar"
+        class="fixed inset-y-0 left-0 w-64 bg-black shadow-lg transform -translate-x-full transition-transform duration-300 z-50 max-lg:block"
+        aria-hidden="true">
+
+        <div class="py-2 pl-1 flex items-center justify-between border-b">
+            <div class=" md:flex  w-1/3">
+                <a href="school.html">
+                    <div class="w-[200px]   font-bold rounded-2xl flex ">
+                        <img src="icons/syncoes.png" class="w-[130px] max-sm:w-[130px]">
+                    </div>
+                </a>
+            </div>
+            <button id="mobile-nav-close" aria-label="Close menu"
+                class="p-2 focus:outline-none text-gray-600">&times;</button>
+        </div>
+        <nav class="p-4">
+            <a href="#home" class="block py-2 text-blue-500">Home</a>
+            <a href="#About" class="block py-2 text-blue-500">Products</a>
+            <a href="#Demo" class="block py-2 text-blue-500">Resources</a>
+            <a href="#overview" class="block py-2 text-blue-500">About</a>
+
+
+        </nav>
+    </aside>
 
     <div id="mobile-sidebar-overlay"
         class="fixed inset-0 bg-black bg-opacity-40 opacity-0 pointer-events-none transition-opacity duration-300 z-40 max-lg:block">
@@ -301,7 +268,7 @@
                             <h1
                                 class="font-bold text-white  text-[clamp(1.4rem,4vw,3rem)]    font-['Poppins'] text-center">
                                 <span class="underline" style="color:  #2B59FF ;">Syncoes</span> School App,
-                                for Coaching <span class="underline" style="color:  #2B59FF ;">Institutes</span>
+                                for Coaching <span class="underline" style="color:  #2B59FF ;">Schools</span>
                             </h1>
 
                             <h1
@@ -485,7 +452,228 @@
             </div>
         </div>
     </footer>
+    <script>
+        if (typeof emailjs === 'undefined') {
+            console.error('EmailJS library not found');
+        } else {
+            emailjs.init("guGBcQQh78cPbeMk_");
+        }
 
+        function showStatus(msg, type) {
+            console.log(type + ': ' + msg);
+            let statusEl = document.getElementById('email-status');
+            if (!statusEl) {
+                statusEl = document.createElement('div');
+                statusEl.id = 'email-status';
+                statusEl.style.cssText = 'position:fixed;right:1rem;bottom:1rem;padding:0.75rem 1.5rem;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.15);z-index:9999;font-weight:600;';
+                document.body.appendChild(statusEl);
+            }
+            statusEl.textContent = msg;
+            statusEl.style.background = (type === 'success') ? '#16a34a' : '#ef4444';
+            statusEl.style.color = 'white';
+            setTimeout(() => statusEl.remove(), 4000);
+        }
+
+        const button_1 = document.getElementById("button_1");
+        const div_1 = document.getElementById("div_1");
+        const button_2 = document.getElementById("button_2");
+        const div_2 = document.getElementById("div_2");
+        const button_3 = document.getElementById("button_3");
+        const div_3 = document.getElementById("div_3");
+
+        const button_a = document.getElementById("button_a");
+        const div_a = document.getElementById("div_a");
+        const button_b = document.getElementById("button_b");
+        const div_b = document.getElementById("div_b");
+        const button_c = document.getElementById("button_c");
+        const div_c = document.getElementById("div_c");
+
+        let options_1 = [div_1, div_2, div_3];
+        let options_2 = [div_a, div_b, div_c];
+
+        button_1?.addEventListener("click", () => choose(1));
+        button_2?.addEventListener("click", () => choose(2));
+        button_3?.addEventListener("click", () => choose(3));
+        button_a?.addEventListener("click", () => choose2(1));
+        button_b?.addEventListener("click", () => choose2(2));
+        button_c?.addEventListener("click", () => choose2(3));
+
+        function choose(input) {
+            const selectedDiv = options_1[input - 1];
+            if (selectedDiv.classList.contains('bg-white')) {
+                selectedDiv.classList.add('bg-blue-400');
+                selectedDiv.classList.remove('bg-white');
+            } else {
+                options_1.forEach(div => {
+                    div.classList.remove('bg-white');
+                    div.classList.add('bg-blue-400');
+                });
+                selectedDiv.classList.remove('bg-blue-400');
+                selectedDiv.classList.add('bg-white');
+            }
+        }
+
+        function choose2(input) {
+            const selectedDiv = options_2[input - 1];
+            if (selectedDiv.classList.contains('bg-white')) {
+                selectedDiv.classList.add('bg-blue-400');
+                selectedDiv.classList.remove('bg-white');
+            } else {
+                options_2.forEach(div => {
+                    div.classList.remove('bg-white');
+                    div.classList.add('bg-blue-400');
+                });
+                selectedDiv.classList.remove('bg-blue-400');
+                selectedDiv.classList.add('bg-white');
+            }
+        }
+
+        const star_1 = document.getElementById("star_1");
+        const star_2 = document.getElementById("star_2");
+        const star_3 = document.getElementById("star_3");
+        const star_4 = document.getElementById("star_4");
+        const star_5 = document.getElementById("star_5");
+
+        const star_1_img = document.getElementById("star_1_img");
+        const star_2_img = document.getElementById("star_2_img");
+        const star_3_img = document.getElementById("star_3_img");
+        const star_4_img = document.getElementById("star_4_img");
+        const star_5_img = document.getElementById("star_5_img");
+
+        const star_1_filled = document.getElementById("star_1_filled");
+        const star_2_filled = document.getElementById("star_2_filled");
+        const star_3_filled = document.getElementById("star_3_filled");
+        const star_4_filled = document.getElementById("star_4_filled");
+        const star_5_filled = document.getElementById("star_5_filled");
+
+        let stars = [star_1_img, star_2_img, star_3_img, star_4_img, star_5_img];
+        let filled = [star_1_filled, star_2_filled, star_3_filled, star_4_filled, star_5_filled];
+
+        star_1?.addEventListener("click", () => perform(1));
+        star_2?.addEventListener("click", () => perform(2));
+        star_3?.addEventListener("click", () => perform(3));
+        star_4?.addEventListener("click", () => perform(4));
+        star_5?.addEventListener("click", () => perform(5));
+
+        function perform(input) {
+            if (stars[input - 1].classList.contains('hidden') && (input < 5 && !stars[input].classList.contains('hidden'))) {
+                stars.forEach(star => star.classList.remove('hidden'));
+                filled.forEach(star => star.classList.add('hidden'));
+            } else if (stars[input - 1].classList.contains('hidden') && (input === 5 || stars[input].classList.contains('hidden'))) {
+                stars.forEach(star => star.classList.remove('hidden'));
+                filled.forEach(star => star.classList.add('hidden'));
+                for (let i = 0; i < input; i++) {
+                    stars[i].classList.add('hidden');
+                    filled[i].classList.remove('hidden');
+                }
+            } else {
+                for (let i = 0; i < input; i++) {
+                    stars[i].classList.add('hidden');
+                    filled[i].classList.remove('hidden');
+                }
+            }
+        }
+
+        const contact = document.getElementById("contact");
+        const feed = document.getElementById("feed");
+        const share = document.getElementById("share");
+
+        share?.addEventListener("click", Submit);
+
+        function Submit() {
+            let current_rating = 5;
+            let one_answer = "not answered";
+            let two_answer = "not answered";
+
+            for (let i = 0; i < 5; i++) {
+                if (!stars[i].classList.contains("hidden")) {
+                    current_rating = i;
+                    break;
+                }
+            }
+
+            for (let i = 0; i < 3; i++) {
+                if (options_1[i].classList.contains("bg-white")) {
+                    if (i === 0) one_answer = "Yes Definitely";
+                    else if (i === 1) one_answer = "Maybe, if pricing is reasonable";
+                    else one_answer = "No";
+                    break;
+                }
+            }
+
+            for (let i = 0; i < 3; i++) {
+                if (options_2[i].classList.contains("bg-white")) {
+                    if (i === 0) two_answer = "Yes";
+                    else if (i === 1) two_answer = "Maybe, Later";
+                    else two_answer = "No";
+                    break;
+                }
+            }
+
+            const formData = {
+                rating: current_rating,
+                q1: one_answer,
+                q2: two_answer,
+                contact: contact.value,
+                feed: feed.value,
+                timestamp: new Date().toLocaleString()
+            };
+
+            emailjs.send("service_nhv19dr", "template_79hgezi", formData)
+                .then(response => {
+                    console.log('EmailJS response:', response);
+                    showStatus('✅ Feedback sent successfully!', 'success');
+                    contact.value = '';
+                    feed.value = '';
+                    stars.forEach(star => star.classList.remove('hidden'));
+                    filled.forEach(star => star.classList.add('hidden'));
+                    options_1.forEach(div => {
+                        div.classList.remove('bg-white');
+                        div.classList.add('bg-blue-400');
+                    });
+                    options_2.forEach(div => {
+                        div.classList.remove('bg-white');
+                        div.classList.add('bg-blue-400');
+                    });
+                })
+                .catch(error => {
+                    console.error('EmailJS error:', error);
+                    showStatus('❌ Error sending feedback: ' + (error.text || error.message), 'error');
+                });
+        }
+    </script>
+    <script>
+        (function () {
+            const openBtn = document.getElementById('mobile-nav-btn');
+            const closeBtn = document.getElementById('mobile-nav-close');
+            const sidebar = document.getElementById('mobile-sidebar');
+            const overlay = document.getElementById('mobile-sidebar-overlay');
+
+            function openSidebar() {
+                if (!sidebar) return;
+                sidebar.classList.remove('-translate-x-full');
+                sidebar.classList.add('translate-x-0');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                overlay.classList.add('opacity-100', 'pointer-events-auto');
+                sidebar.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('overflow-hidden');
+            }
+
+            function closeSidebar() {
+                if (!sidebar) return;
+                sidebar.classList.add('-translate-x-full');
+                sidebar.classList.remove('translate-x-0');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                overlay.classList.remove('opacity-100', 'pointer-events-auto');
+                sidebar.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            openBtn?.addEventListener('click', openSidebar);
+            closeBtn?.addEventListener('click', closeSidebar);
+            overlay?.addEventListener('click', closeSidebar);
+        })();
+    </script>
 
 </body>
 
