@@ -17,67 +17,12 @@
         html {
             scroll-behavior: smooth;
         }
-
-        .hero-title {
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            background: linear-gradient(90deg, #7c3aed, #2563eb);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        #head {
-            color: #312C2C;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .description {
-            color: #545963;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 100;
-        }
-
-        .cab,
-        .cab-left {
-            font-family: Cabin, sans-serif;
-            font-weight: 700;
-            font-size: 16px;
-            line-height: 24px;
-            letter-spacing: 0.1px;
-        }
-
-        .para,
-        .para-left {
-            font-family: Cabin, sans-serif;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 20px;
-            letter-spacing: 0.2px;
-        }
-
-        .scroll {
-            scrollbar-color: #055bca rgba(88, 138, 240, 0.6);
-            scrollbar-width: thin;
-        }
-
-        @media (max-width: 640px) {
-            .scroll::-webkit-scrollbar {
-                height: 6px;
-            }
-
-            .scroll::-webkit-scrollbar-thumb {
-                background: #055bca;
-                border-radius: 3px;
-            }
-        }
     </style>
 </head>
 
-<body class="overflow-x-hidden">
-    <nav class="flex bg-white border-2   max-sm:flex font-sans h-14 w-full items-center text-gray-200">
+<body class="overflow-x-hidden ">
+    <nav
+        class="flex bg-[#12141D]   max-sm:flex font-sans h-14 w-full items-center text-gray-200 pl-[20%] pr-[15%] max-lg:pl-[0px] max-lg:pr-[0px]">
 
 
         <ul class="flex w-full justify-between items-center px-2 sm:px-4 max-sm:px-2 ">
@@ -89,39 +34,56 @@
                 </a>
             </div>
 
-            <div class="flex justify-center items-center sm:hidden">
-                <a href="index.html">
-                    <img src="/icons/dash.png" style="width: 140px; height:20px" alt="Logo">
-                </a>
-            </div>
 
-            <div
-                class="flex max-lg:hidden justify-center items-center w-full sm:w-auto bg-white border-2 border-blue-500 rounded-b-2xl px-2 py-1">
-                <a href="#home" class="text-blue-500 hover:text-blue-800 px-2 sm:px-3 text-xs sm:text-base">Home</a>
-                <a href="#About" class="text-blue-500 hover:text-blue-800 px-2 sm:px-3 text-xs sm:text-base">About</a>
-                <a href="#Demo" class="text-blue-500 hover:text-blue-800 px-2 sm:px-3 text-xs sm:text-base">Demo</a>
-                <a href="#overview" class="text-blue-500 hover:text-blue-800 px-2 sm:px-3 text-xs sm:text-base">Work</a>
-                <a href="#feedback"
-                    class="text-blue-500 hover:text-blue-800 px-2 sm:px-3 text-xs sm:text-base">Feedback</a>
+            <div class="flex max-lg:hidden justify-center items-center w-full sm:w-auto  rounded-b-2xl px-2 py-1">
+                <a href="#home" class="text-white hover:text-blue-800 px-2 sm:px-3 text-xs sm:text-base"><span
+                        class="underline text-blue-500">Home</span></a>
+                <a href="#About" class="text-white hover:text-blue-800 px-2 sm:px-3 text-xs sm:text-base">Products</a>
+                <a href="#Demo" class="text-white hover:text-blue-800 px-2 sm:px-3 text-xs sm:text-base">Resources</a>
+                <a href="#overview" class="text-white hover:text-blue-800 px-2 sm:px-3 text-xs sm:text-base">About</a>
+
             </div>
 
             <div class="hidden md:flex w-1/3 justify-end">
-                <div
-                    class="w-[200px]  max-lg:hidden h-[40px] flex bg-blue-500 justify-center items-center font-bold rounded-2xl text-white">
+                <div class="w-[200px]  max-lg:hidden h-[40px] flex bg-blue-500 justify-center items-center font-bold rounded-2xl text-white"
+                    style="background-color:  #2B59FF;">
                     <a href="https://forms.gle/rUoe7iPL223UfvhC9">
 
-                        <h1>Pre Book</h1>
+                        <h1>Contact Us</h1>
                     </a>
                 </div>
             </div>
         </ul>
-        <div
-            class="max-lg:block hidden bg-blue-500 mr-2  w-[40px] h-[46px] flex justify-center items-center rounded-xl  ">
+        <div class="max-lg:block hidden  mr-2  w-[40px] h-[46px] flex justify-center items-center rounded-xl  ">
             <button id="mobile-nav-btn" aria-label="Open menu" class="p-2 focus:outline-none">
-                <img src="icons/dash.png" class="w-[30px] h-[30px]" alt="Menu">
+                <img src="icons/bars.png" class="w-[30px] h-[30px]" alt="Menu">
             </button>
         </div>
     </nav>
+    <aside id="mobile-sidebar"
+        class="fixed inset-y-0 left-0 w-64 bg-black shadow-lg transform -translate-x-full transition-transform duration-300 z-50 max-lg:block"
+        aria-hidden="true">
+
+        <div class="py-2 pl-1 flex items-center justify-between border-b">
+            <div class=" md:flex  w-1/3">
+                <a href="school.html">
+                    <div class="w-[200px]   font-bold rounded-2xl flex ">
+                        <img src="icons/syncoes.png" class="w-[130px] max-sm:w-[130px]">
+                    </div>
+                </a>
+            </div>
+            <button id="mobile-nav-close" aria-label="Close menu"
+                class="p-2 focus:outline-none text-gray-600">&times;</button>
+        </div>
+        <nav class="p-4">
+            <a href="#home" class="block py-2 text-blue-500">Home</a>
+            <a href="#About" class="block py-2 text-blue-500">Products</a>
+            <a href="#Demo" class="block py-2 text-blue-500">Resources</a>
+            <a href="#overview" class="block py-2 text-blue-500">About</a>
+
+
+        </nav>
+    </aside>
 
     <div id="mobile-sidebar-overlay"
         class="fixed inset-0 bg-black bg-opacity-40 opacity-0 pointer-events-none transition-opacity duration-300 z-40 max-lg:block">
@@ -145,38 +107,45 @@
         </nav>
     </aside>
 
-    <section id="home" class="w-full bg-gray-100 h-screen flex flex-col">
+    <section id="home" class="w-full bg-[#12141D] h-auto flex flex-col">
 
-        <div class="w-full flex justify-center max-sm:items-end  max-sm:flex-col max-sm:items-center h-screen">
+        <div
+            class="w-full max-sm:flex-col-reverse flex justify-center max-sm:items-end  max-sm:flex-col max-sm:items-center h-screen">
+
             <div
-                class="w-[40%]  flex flex-col max-sm:items-end justify-end max-sm:justify-between max-sm:w-[90%] max-sm:h-[26%]  h-full flex pb-12 max-sm:pb-2">
+                class="w-[40%] max-md:w-[50%] max-sm:w-[90%] bg-[#12141D] from-white to-gray-200 from-50% to-100% max-sm:mt-12  h-auto justify-center max-sm:mb-4 flex max-sm:h-[55%]">
+                <div class="w-full h-full flex justify-center items-center   ">
+
+                    <img src="/figma/combined4.png" alt=""
+                        class=" h-auto w-[clamp(300px,50vw,500px)] max-sm:mt-6 max-sm:ml-4 ">
+
+                </div>
+
+            </div>
+            <div
+                class="w-[40%] max-md:w-[50%]  flex flex-col max-sm:items-end justify-center items-center bg-[#12141D] max-sm:justify-between max-sm:w-[90%] max-sm:h-[26%]  h-full flex pb-12 max-sm:pb-2">
                 <div
                     class="flex flex-col max-sm:items-center  max-sm:justify-between  justify-center w-full h-full   max-sm:ml-6 ">
-                    <div class=" max-sm:items-center  max-sm:h-full">
+                    <div class=" max-sm:items-center flex justify-center flex-col items-center  max-sm:h-full">
 
                         <h1
-                            class="font-bold max-lg:text-xl max-sm:text-2xl text-6xl leading-normal  max-sm:hidden new_title font-['Poppins'] text-left">
-                            Everything
-                            Your School
-                            Needs,in One App
+                            class="font-bold text-white  text-[clamp(1.9rem,4vw,3.75rem)]    font-['Poppins'] text-center">
+                            <span class="underline" style="color:  #2B59FF ;">Your own</span> Education
+                            <br>App made <span class="underline" style="color:  #2B59FF ;">easy</span>
                         </h1>
-                        <h1 class="font-bold text-4xl mt-4  sm:hidden font-['Poppins'] text-left">
-                            Everything
-                            Your School
-                            Needs,in One App
-                        </h1>
-                        <h1 class="mt-8 text-2xl max-lg:text-sm  max-sm:text-sm w-[70%] max-sm:w-[90%]">An easy-to-use
-                            app that helps
-                            schools
-                            share
-                            classes,
-                            homework, and announcements with students—without
-                            any technical setup</h1>
+
+                        <h1
+                            class="mt-8  font-thin text-white max-lg:text-sm text-center  text-[clamp(1rem,4vw,0.4rem)] w-[75%] max-sm:w-[95%]">
+
+                            An
+                            Built to save time, this simple and affordable app helps schools and
+                            coaching institutes manage classes, notes, attendance, and updates
+                            in one place.</h1>
                         <div>
-                            <div
-                                class="w-[300px] max-sm:hidden h-[75px] flex justify-center items-center bg-blue-500 text-white text-xl mt-12 rounded-full">
+                            <div class="w-[300px] max-sm:hidden h-[75px] flex justify-center items-center  text-white text-xl mt-12 max-sm:mt-2 rounded-full"
+                                style="background-color: #2B59FF;">
                                 <a href="#feedback">
-                                    <h1 class="font-bold text-2xl font-medium">Give Feedback</h1>
+                                    <h1 class="font-bold text-2xl font-medium">Get Your App</h1>
                                 </a>
                             </div>
 
@@ -184,620 +153,305 @@
                     </div>
                 </div>
             </div>
+
+        </div>
+        <div class="w-full sm:hidden justify-center  h-[20%] flex  ">
             <div
-                class="w-[40%] max-sm:w-[90%] bg-gray-100 from-white to-gray-200 from-50% to-100% max-sm:mt-12  h-auto justify-center flex max-sm:h-[55%]">
-                <div class="w-full h-full flex justify-center items-center  ">
+                class="flex w-[140px] h-[50px] mb-4  mt-6 justify-center items-center bg-[#2B59FF] text-white rounded-full relative z-10">
+                <a href="#feedback">
+                    <h1 class="font-bold text-sm  font-medium">Get Your App</h1>
+                </a>
+            </div>
+        </div>
 
-                    <img src="/figma/Group 483x.png" alt=""
-                        class=" h-[90%]   max-sm:auto max-sm:h-full max-h-[700px]  mt-6 max-sm:ml-4 ">
+    </section>
+    <section id="About" class="flex flex-col items-center h-screen max-lg:h-auto max-sm:h-auto">
+        <div class="w-full flex  flex-col justify-center items-center h-[30%] mt-8">
+            <h1 class="text-5xl text-bold mt-12 max-sm:text-3xl" style="font-family:'Inter'; color: #312C2C; ">Explore
+                Our <span class="text-[#2B59FF]">Products</span></h1>
+            <p class="text-center w-[26%] max-lg:w-[60%] max-md:w-[70%] max-sm:w-[80%] font-normal mt-4 mb-10 "
+                style="color:#737373">
+                Choose the app designed specifically for your school or coaching institute.
+            </p>
 
+        </div>
+
+        <div
+            class="flex max-lg:mt-2  max-lg:flex-col max-lg:w-[70%] max-sm:w-[95%] max-lg:h-auto bg-[#12141D] rounded-2xl  justify-center items-center w-[70%] h-screen  ">
+
+            <div
+                class="w-[40%] max-lg:mt-2 max-lg:w-[99%] pl-12 max-sm:pl-4 pt-6 bg-[#12141D] max-sm:mt-4 h-full max-sm:h-auto">
+                <div class="bg-[#2955F4] w-[95%] h-[95%] rounded-2xl max-sm:h-auto">
+                    <div class="w-full h-full flex justify-center items-end  max-sm:h-auto">
+
+                        <img src="/figma/page2.png" alt=""
+                            class=" h-[96%]  max-sm:h-[500px]  max-sm:mx-4  mt-6 max-sm:ml-4 ">
+
+                    </div>
                 </div>
 
             </div>
-            <div class="w-full sm:hidden justify-center  h-[20%] flex  ">
+            <div
+                class="w-[55%] max-sm:flex max-sm:flex-col max-sm:justify-center max-sm:items-center max-lg:w-[100%] h-full max-lg:h-auto">
                 <div
-                    class="flex w-[140px] h-[50px]  mt-6 justify-center items-center bg-blue-500 text-white rounded-full relative z-10">
+                    class="w-full rounded-2xl flex flex-col max-sm:items-end justify-center items-center bg-[#12141D] max-sm:justify-between max-sm:w-[90%] max-sm:h-[26%]  h-full flex pb-12 max-sm:pb-2">
+                    <div
+                        class="flex flex-col max-sm:items-center  max-sm:justify-between  justify-center w-full h-full   max-sm:ml-6 ">
+                        <div
+                            class=" max-sm:items-center  flex justify-center flex-col items-center mt-12 max-sm:mt-4  max-sm:h-full">
+
+                            <h1
+                                class="font-bold text-white  text-[clamp(1.4rem,4vw,3rem)]    font-['Poppins'] text-center">
+                                <span class="underline" style="color:  #2B59FF ;">Syncoes</span> Coaching App,
+                                for Coaching <span class="underline" style="color:  #2B59FF ;">Institutes</span>
+                            </h1>
+
+                            <h1
+                                class="mt-2 font-thin text-white max-lg:text-sm text-center  text-[clamp(1rem,4vw,0.4rem)] w-[75%] max-sm:w-[95%]">
+
+                                An
+                                Built to save time, this simple and affordable app helps schools and
+                                coaching institutes manage classes, notes, attendance, and updates
+                                in one place.</h1>
+                            <div>
+                                <div class="w-[300px] max-sm:hidden h-[75px] flex justify-center items-center  text-white text-xl mt-12 rounded-full"
+                                    style="background-color: #2B59FF;">
+                                    <a href="#feedback">
+                                        <h1 class="font-bold text-2xl font-medium">Get Your App</h1>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="w-full sm:hidden max-sm:flex mb-8 justify-center items-center h-[20%] flex  ">
+                <div
+                    class="flex w-[140px] h-[50px]  mt-6 justify-center items-center bg-[#2B59FF] text-white rounded-full relative z-10">
                     <a href="#feedback">
-                        <h1 class="font-bold text-sm font-medium">Give Feedback</h1>
+                        <h1 class="font-bold text-sm  font-medium">Get Your App</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section id="About2" class="flex flex-col items-center justify-center h-screen max-lg:h-auto max-sm:h-auto mt-2">
+
+
+        <div
+            class="flex rounded-2xl flex-row-reverse  max-lg:flex-col mt-12 max-sm:mt-4 max-sm:w-[95%] max-lg:h-auto bg-[#12141D] rounded-2xl  justify-center items-center w-[70%] h-[80%] ">
+
+            <div
+                class="w-[40%] max-lg:mt-2 max-lg:w-[99%] pl-12 max-sm:pl-4 pt-6 bg-[#12141D] max-sm:mt-4 h-full max-sm:h-auto">
+                <div class="bg-[#2955F4] w-[95%] h-[95%] rounded-2xl max-sm:h-auto">
+                    <div class="w-full h-full flex justify-center items-end  max-sm:h-auto">
+
+                        <img src="/figma/page3.png" alt="" class=" 
+                              h-[96%]  max-sm:h-[500px]  max-sm:mx-4  mt-6 max-sm:ml-4  ">
+
+                    </div>
+                </div>
+
+            </div>
+            <div
+                class="w-[55%] max-sm:flex max-sm:flex-col max-sm:justify-center max-sm:items-center max-lg:w-[100%] h-full max-lg:h-auto">
+                <div
+                    class="w-full flex flex-col max-sm:items-end justify-center items-center bg-[#12141D] max-sm:justify-between max-sm:w-[90%] max-sm:h-[26%]  h-full flex pb-12 max-sm:pb-2">
+                    <div
+                        class="flex flex-col max-sm:items-center  max-sm:justify-between  justify-center w-full h-full   max-sm:ml-6 ">
+                        <div
+                            class=" max-sm:items-center  flex justify-center flex-col items-center mt-12 max-sm:mt-4  max-sm:h-full">
+
+                            <h1
+                                class="font-bold text-white  text-[clamp(1.4rem,4vw,3rem)]    font-['Poppins'] text-center">
+                                <span class="underline" style="color:  #2B59FF ;">Syncoes</span> School App,
+                                for Coaching <span class="underline" style="color:  #2B59FF ;">Schools</span>
+                            </h1>
+
+                            <h1
+                                class="mt-2 font-thin text-white max-lg:text-sm text-center  text-[clamp(1rem,4vw,0.4rem)] w-[75%] max-sm:w-[95%]">
+
+                                Designed for daily school operations — manage classes, homework, attendance, notices,
+                                and parent communication effortlessly.</h1>
+                            <div>
+                                <div class="w-[300px] max-sm:hidden h-[75px] flex justify-center items-center  text-white text-xl mt-12 rounded-full"
+                                    style="background-color: #2B59FF;">
+                                    <a href="#feedback">
+                                        <h1 class="font-bold text-2xl font-medium">Get Your App</h1>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="w-full sm:hidden max-sm:flex mb-8 justify-center items-center h-[20%] flex  ">
+                <div
+                    class="flex w-[140px] h-[50px]  mt-6 justify-center items-center bg-[#2B59FF] text-white rounded-full relative z-10">
+                    <a href="#feedback">
+                        <h1 class="font-bold text-sm  font-medium">Get Your App</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="h-auto w-full mt-12">
+        <div
+            class="w-full h-[600px] max-sm:h-[550px] max-lg:h-[800px] max-lg:p-4 max-lg:flex-col max-lg:items-center  flex bg-[#12141D]">
+            <div class="w-1/2 h-full max-sm:hidden flex justify-center items-center ">
+                <img src="figma/page4.png" alt="">
+            </div>
+            <div class="flex w-1/2 max-lg:w-full max-sm:px-4 h-full max-sm:w-full flex-col justify-center gap-4">
+                <h1 class="text-5xl px-4 max-sm:px-2 text-white max-sm:text-4xl font-[Poppins]">Why Syncoes</h1>
+                <p
+                    class="text-white p-4 max-sm:px-2   text-[clamp(0.9rem,50vw,0.4rem)] w-[70%] max-lg:w-[90%] font-thin">
+                    Syncoes is a
+                    simple
+                    and affordable
+                    education app
+                    platform built
+                    for
+                    schools and
+                    coaching institutes.
+                    It works on a monthly subscription model, so you can get your own app without heavy setup or
+                    long-term commitment. Simply enter your institute code to access your app — no need to upload
+                    anything to the Play Store. Syncoes reduces manual work by bringing classes, notes, attendance, and
+                    student updates into one easy-to-use app, saving time every day without technical complexity or high
+                    costs.</p>
+                <h1 class="text-white font-bold mt-6 max-sm:mt-2 max-sm:text-sm text-gray-400">Saves Time • Affordable •
+                    Easy to Use •
+                    Built for
+                    Education</h1>
+                <div class="w-[clamp(100px,50vw,200px)] p-1 h-auto flex justify-center items-center  text-white text-xl mt-12 max-sm:mt-4 rounded-full"
+                    style="background-color: #2B59FF;">
+                    <a href="#feedback">
+                        <h1 class="font-bold text-l font-bold">Get Your App</h1>
                     </a>
                 </div>
             </div>
         </div>
 
     </section>
-    <section id="About">
-        <div class="w-full flex  flex-col justify-center items-center h-[30%]">
-            <h1 class="text-5xl font-medium mt-12 max-sm:text-3xl" style="color: #312C2C; ">How it Works</h1>
-            <p class="text-center max-w-2xl font-normal mt-4 mb-10 px-4" style="color:#737373">
-                Embrace life's vastness, venture forth, and discover the wonders waiting beyond.
-                The world beckons; seize its grand offerings now!
-            </p>
-
-        </div>
-        <div class="relative group w-full h-[30%] max-sm:h-[250px] sm:hidden flex justify-center items-center">
-            <div
-                class="w-[100%] relative h-[450px]  flex justify-center items-center rounded-3xl max-sm:mt-12 relative overflow-hidden ">
-
-                <img src="figma/iPhone-13-Pro-Front.png" alt=""
-                    class="absolute top-1/2 left-1/2  -translate-x-1/2 -translate-y-1/2 z-20 ml-[50px] w-[300px] max-sm:ml-10">
-
-                <div class=" w-[300px] rounded-full h-[280px] bg-[#367CDF] max-sm:w-[200px] max-sm:h-[180px] ">
-
-                </div>
-            </div>
-
-        </div>
-        <div class="flex max-sm:hidden  justify-center items-center w-full h-[40%] px-[200px]">
-            <div class="w-1/3 items-end flex flex-col  h-[700px]">
-                <div class="w-[328px] h-[266px]  mt-20 max-sm:mt-2 ml-20">
-                    <div class="w-full h-1/2  flex justify-end  items-center ">
-
-                        <div
-                            class="w-[100px] max-sm:w-[20px] max-sm:mr-4 flex justify-center items-center h-[100px] max-sm:h-[20px] bg-[#367CDF] mr-12 rounded-full">
-                            <h1 class="text-white font-normal text-3xl">1</h1>
-                        </div>
-                    </div>
-                    <div class="flex flex-col  justify-end">
-                        <div>
-
-                            <h1 class="cab text-xl  text-right mr-12 mt-2 mb-4">Download the App</h1>
-                            <p class="ml-14 mr-[52px] para max-sm:mr-2 max-sm:p-2 max-sm:text-sm"
-                                style="text-align: right;">
-                                Students download the app from
-                                the Play Store using a single
-                                common app name.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="w-[328px] h-[266px]   max-sm:mt-2  ml-20 ">
-                    <div class="w-full h-1/2  flex justify-end  items-center ">
-
-                        <div
-                            class="w-[100px] flex justify-center items-center h-[100px] bg-[#367CDF] mr-12 max-sm:mr-4 rounded-full max-sm:w-[70px] max-sm:h-[70px]">
-                            <h1 class="text-white font-normal text-3xl">3</h1>
-                        </div>
-                    </div>
-                    <div class="flex flex-col  justify-end">
-                        <div>
-                            <div class="w-80%">
-
-                                <h1 class="cab text-xl text-right mr-12 mt-2 mb-4 max-sm:mr-4">App Becomes School App
-                                </h1>
-                            </div>
-                            <p class="ml-14 mr-[52px] para max-sm:mr-4" style="text-align: right;">
-                                After entering the code, the app:
-                                + Loads the school's name & logo.
-                                + Changes the app colors/theme
-                                + Shows only that school’s data.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="relative group w-1/3 h-full max-sm:hidden  flex justify-center nice items-center">
-                <div
-                    class="w-[100%] relative h-[700px]  flex justify-center items-center rounded-3xl relative overflow-hidden">
-
-                    <img src="figma/iPhone-13-Pro-Front2.png" alt=""
-                        class="absolute top-1/2 mr-4 hidden lg:block -translate-y-1/2 z-20 ml-[62px]">
-
-                    <div class="hidden lg:block aspect-square w-[80%] ml-8 rounded-full bg-[#367CDF] ">
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="w-1/3  flex flex-col  h-[700px]">
-                <div class="w-[328px] max-sm:w-[200px] h-[266px]  mt-20 ">
-                    <div class="w-full h-1/2  flex   items-center ">
-
-                        <div
-                            class="w-[100px]  flex justify-center items-center h-[100px]  bg-[#367CDF] ml-12 rounded-full max-sm:w-[70px] max-sm:h-[70px]">
-                            <h1 class="text-white font-normal text-3xl ">2</h1>
-                        </div>
-                    </div>
-                    <div class="flex flex-col ">
-                        <div>
-
-                            <h1 class="cab-left text-xl ml-[52px] mt-2 mb-4">Enter School Code
-
-                            </h1>
-                            <p class="ml-14 mr-[52px] para-left">
-                                On first launch, the app asks for a School / Class Code provided by the school.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="w-[328px] max-sm:w-[200px] h-[266px]  ">
-                    <div class="w-full h-1/2  flex   items-center ">
-
-                        <div
-                            class="w-[100px] flex justify-center items-center h-[100px] bg-[#367CDF] ml-12 rounded-full max-sm:w-[70px] max-sm:h-[70px]">
-                            <h1 class="text-white font-normal text-3xl">4</h1>
-                        </div>
-
-                    </div>
-                    <div class="flex flex-col ">
-                        <div>
-
-                            <h1 class="cab-left text-xl ml-[52px] mt-2 mb-4">Students Use Daily</h1>
-                            <p class="ml-14 mr-[52px] para-left">
-                                Students see:<br>
-                                *Classes & timetable<br>
-                                *Homework & announcements<br>
-                                *Results, attendance, etc. </p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-
-                </div>
-            </div>
-    </section>
-    <section class="sm:hidden h-auto">
-        <div class="flex    w-full h-full px-2 gap-auto">
-            <div class="w-1/ max-sm:w-1/2 items-end flex flex-col  h-[700px]">
-                <div class="w-full h-[266px]  mt-20 max-sm:mt-2 ">
-                    <div class="w-full h-1/2  flex justify-end  items-center ">
-
-                        <div
-                            class="w-[100px] max-sm:w-[60px] max-sm:mr-4 flex justify-center items-center h-[100px] max-sm:h-[60px] bg-[#367CDF] mr-12 rounded-full">
-                            <h1 class="text-white font-normal text-3xl">1</h1>
-                        </div>
-                    </div>
-                    <div class="flex flex-col w-full justify-end">
-                        <div class="h-[100px] w-full">
-
-                            <h1 class="cab text-right text-xl mr-4  ">Download the App</h1>
-                            <p class=" mr-2 max-sm:mr-2 max-sm:p-2 max-sm:text-sm" style="text-align: right;">
-                                Students download the app from
-                                the Play Store using a single
-                                common app name.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="w-full h-[266px]  mt-20 max-sm:mt-2 ">
-                    <div class="w-full h-1/2  flex justify-end  items-center ">
-
-                        <div
-                            class="w-[100px] max-sm:w-[60px] max-sm:mr-4 flex justify-center items-center h-[100px] max-sm:h-[60px] bg-[#367CDF] mr-12 rounded-full">
-                            <h1 class="text-white font-normal text-3xl">3</h1>
-                        </div>
-                    </div>
-                    <div class="flex flex-col w-full justify-end">
-                        <div class="h-[100px] w-full">
-
-                            <h1 class="cab text-right text-xl mr-4  ">App Becomes School App</h1>
-                            <p class=" mr-2 max-sm:mr-4  max-sm:text-sm" style="text-align: right;">
-                                After entering the code, the app:
-                                Loads the school's name & logo.
-                                ,Changes the app colors/theme
-                                ,Shows only that school’s data.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="relative group w-1/3  h-full max-sm:hidden  flex justify-center items-center">
-                <div
-                    class="w-[100%] relative h-[700px]  flex justify-center items-center rounded-3xl relative overflow-hidden">
-
-                    <img src="figma/iPhone-13-Pro-Front.png" alt=""
-                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 ml-[62px]">
-
-                    <div class=" w-[350px] rounded-full h-[350px] bg-[#367CDF] ">
-
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="w-1/2  flex flex-col  h-[700px]">
-                <div class="w-[328px] max-sm:w-[200px] h-[266px]  mt-[150px] ">
-                    <div class="w-full h-1/2  flex   items-center ">
-
-                        <div
-                            class="w-[100px]  flex justify-center items-center h-[100px]  bg-[#367CDF] ml-6 rounded-full max-sm:w-[60px] max-sm:h-[60px]">
-                            <h1 class="text-white font-normal text-3xl ">2</h1>
-                        </div>
-                    </div>
-                    <div class="flex flex-col  ">
-                        <div>
-
-                            <h1 class="cab-left text-xl ml-6 ">Enter School Code
-
-                            </h1>
-                            <p class="ml-6  para-left">
-                                On first launch, the app asks for a School / Class Code provided by the school.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="w-full h-[266px]  ">
-                    <div class="w-full h-1/2  flex   items-center ">
-
-                        <div
-                            class="w-[100px] flex justify-center items-center h-[100px] bg-[#367CDF] ml-6 rounded-full max-sm:w-[60px] max-sm:h-[60px]">
-                            <h1 class="text-white font-normal text-3xl">4</h1>
-                        </div>
-
-                    </div>
-                    <div class="flex flex-col ">
-                        <div>
-
-                            <h1 class="cab-left text-xl ml-6">Students Use Daily</h1>
-                            <p class="ml-14  ml-6 para-left">
-                                Students see:
-                                ,Classes & timetable
-                                ,Homework & announcements
-                                ,Results, attendance, etc. </p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-
-                </div>
-            </div>
-    </section>
-    <section id="overview" class="w-full py-12 sm:py-16 lg:py-20 px-4 sm:px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-8 sm:mb-12">
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6"
-                    style="color: #000000B2; font-family: Poppins;">
-                    Simple for Students
+    <section class="w-full h-screen flex justify-center items-center max-lg:h-auto">
+        <div class="h-[70%] w-[70%] max-lg:gap-4 flex flex-col max-lg:h-auto  ">
+            <div class="w-full h-[20%] gap-2 flex flex-col justify-center items-center max-lg:h-auto ">
+                <h1 class="text-5xl font-[Poppins] max-lg:mt-12  max-lg:text-center max-sm:text-3xl">How Syncoes Works
                 </h1>
-                <p class="text-base sm:text-lg max-w-lg" style="font-family: 'Inter';">
-                    Schools control what features are active, so students see only what matters to them.
+                <p class="font-thin text-center">Get your institute app ready in minutes — no technical setup required.
                 </p>
             </div>
+            <div class="w-full h-[80%] max-lg:flex-col flex items-center max-lg:h-auto ">
+                <div class="flex w-[30%] max-lg:w-full h-auto flex-col  justify-center items-center gap-2"><img
+                        src="figma/1.png" class="w-[150px] h-[150px]" alt="">
+                    <h1 class="text-xl text-center ">Download the Syncoes App</h1>
+                    <p class="text-center font-thin w-[90%]">Students download the Syncoes app from the Play Store — no
+                        separate
+                        app for
+                        each school or
+                        coaching institute.</p>
+                </div>
+                <div class="w-[10%] flex justify-center max-lg:h-[60px] items-center"><img src="figma/Arrow.png"
+                        class="w-[50%] max-lg:transform max-lg:rotate-90" alt="">
+                </div>
+                <div class="flex w-[30%] max-lg:w-full h-auto flex-col justify-center items-center gap-2"><img
+                        src="figma/2.png" class="w-[150px] h-[150px]" alt="">
+                    <h1 class="text-xl text-center">Enter School or Coaching Code</h1>
+                    <p class="text-center font-thin w-[90%]">Students enter their school or coaching institute code, and
+                        the app instantly switches to their institute’s app.</p>
+                </div>
+                <div class="w-[10%] flex justify-center items-center max-lg:h-[60px]"><img src="figma/Arrow.png"
+                        class="w-[50%] max-lg:transform max-lg:rotate-90 " alt="">
+                </div>
 
-            <div class="hidden lg:grid grid-cols-2 xl:grid-cols-4 gap-6">
-                <div class="bg-[url('/figma/page3/back1.png')] bg-cover rounded-t-xl overflow-hidden">
-                    <img src="figma/page3/phone1.png" alt="" class="w-full">
-                    <div class="bg-white p-4 text-center">
-                        <h1 class="font-bold text-xl" style="font-family: Poppins;">Student Login</h1>
-                    </div>
-                </div>
-                <div class="bg-[url('/figma/page3/back1.png')] bg-cover rounded-t-xl overflow-hidden">
-                    <img src="figma/page3/phone2.png" alt="" class="w-full">
-                    <div class="bg-white p-4 text-center">
-                        <h1 class="font-bold text-xl" style="font-family: Poppins;">Student Profile</h1>
-                    </div>
-                </div>
-                <div class="bg-[url('/figma/page3/back1.png')] bg-cover rounded-t-xl overflow-hidden">
-                    <img src="figma/page3/attendance.png" alt="" class="w-full">
-                    <div class="bg-white p-4 text-center">
-                        <h1 class="font-bold text-xl" style="font-family: Poppins;">Attendance</h1>
-                    </div>
-                </div>
-                <div class="bg-[url('/figma/page3/back1.png')] bg-cover rounded-t-xl overflow-hidden">
-                    <img src="figma/page3/fees.png" alt="" class="w-full">
-                    <div class="bg-white p-4 text-center">
-                        <h1 class="font-bold text-xl" style="font-family: Poppins;">Fees Payment</h1>
-                    </div>
-                </div>
-                <div class="bg-[url('/figma/page3/back1.png')] bg-cover rounded-t-xl overflow-hidden">
-                    <img src="figma/page3/result.png" alt="" class="w-full">
-                    <div class="bg-white p-4 text-center">
-                        <h1 class="font-bold text-xl" style="font-family: Poppins;">Result</h1>
-                    </div>
-                </div>
-                <div class="bg-[url('/figma/page3/back1.png')] bg-cover rounded-t-xl overflow-hidden">
-                    <img src="figma/page3/Quizz.png" alt="" class="w-full">
-                    <div class="bg-white p-4 text-center">
-                        <h1 class="font-bold text-xl" style="font-family: Poppins;">Fun Quizz</h1>
-                    </div>
-                </div>
-                <div class="bg-[url('/figma/page3/back1.png')] bg-cover rounded-t-xl overflow-hidden">
-                    <img src="figma/page3/table.png" alt="" class="w-full">
-                    <div class="bg-white p-4 text-center">
-                        <h1 class="font-bold text-xl" style="font-family: Poppins;">Time Table</h1>
-                    </div>
-                </div>
-                <div class="bg-[url('/figma/page3/back1.png')] bg-cover rounded-t-xl overflow-hidden">
-                    <img src="figma/page3/sheet.png" alt="" class="w-full">
-                    <div class="bg-white p-4 text-center">
-                        <h1 class="font-bold text-xl" style="font-family: Poppins;">Data Sheet</h1>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lg:hidden bg-blue-500 p-4 rounded-2xl">
-                <div class="flex gap-4 overflow-x-auto scroll pb-4">
-                    <div
-                        class="flex-shrink-0 w-64 bg-[url('/figma/page3/back1.png')] bg-cover rounded-t-xl overflow-hidden">
-                        <img src="figma/page3/phone1.png" alt="" class="w-full">
-                        <div class="bg-white p-3 text-center">
-                            <h1 class="font-bold text-lg" style="font-family: Poppins;">Student Login</h1>
-                        </div>
-                    </div>
-                    <div
-                        class="flex-shrink-0 w-64 bg-[url('/figma/page3/back1.png')] bg-cover rounded-t-xl overflow-hidden">
-                        <img src="figma/page3/phone2.png" alt="" class="w-full">
-                        <div class="bg-white p-3 text-center">
-                            <h1 class="font-bold text-lg" style="font-family: Poppins;">Student Profile</h1>
-                        </div>
-                    </div>
-                    <div
-                        class="flex-shrink-0 w-64 bg-[url('/figma/page3/back1.png')] bg-cover rounded-t-xl overflow-hidden">
-                        <img src="figma/page3/result.png" alt="" class="w-full">
-                        <div class="bg-white p-3 text-center">
-                            <h1 class="font-bold text-lg" style="font-family: Poppins;">Result</h1>
-                        </div>
-                    </div>
-                    <div
-                        class="flex-shrink-0 w-64 bg-[url('/figma/page3/back1.png')] bg-cover rounded-t-xl overflow-hidden">
-                        <img src="figma/page3/Quizz.png" alt="" class="w-full">
-                        <div class="bg-white p-3 text-center">
-                            <h1 class="font-bold text-lg" style="font-family: Poppins;">Fun Quizz</h1>
-                        </div>
-                    </div>
-                    <div
-                        class="flex-shrink-0 w-64 bg-[url('/figma/page3/back1.png')] bg-cover rounded-t-xl overflow-hidden">
-                        <img src="figma/page3/attendance.png" alt="" class="w-full">
-                        <div class="bg-white p-3 text-center">
-                            <h1 class="font-bold text-lg" style="font-family: Poppins;">Attendance</h1>
-                        </div>
-                    </div>
-                    <div
-                        class="flex-shrink-0 w-64 bg-[url('/figma/page3/back1.png')] bg-cover rounded-t-xl overflow-hidden">
-                        <img src="figma/page3/fees.png" alt="" class="w-full">
-                        <div class="bg-white p-3 text-center">
-                            <h1 class="font-bold text-lg" style="font-family: Poppins;">Fees Payment</h1>
-                        </div>
-                    </div>
-                    <div
-                        class="flex-shrink-0 w-64 bg-[url('/figma/page3/back1.png')] bg-cover rounded-t-xl overflow-hidden">
-                        <img src="figma/page3/table.png" alt="" class="w-full">
-                        <div class="bg-white p-3 text-center">
-                            <h1 class="font-bold text-lg" style="font-family: Poppins;">Time Table</h1>
-                        </div>
-                    </div>
-                    <div
-                        class="flex-shrink-0 w-64 bg-[url('/figma/page3/back1.png')] bg-cover rounded-t-xl overflow-hidden">
-                        <img src="figma/page3/sheet.png" alt="" class="w-full">
-                        <div class="bg-white p-3 text-center">
-                            <h1 class="font-bold text-lg" style="font-family: Poppins;">Data Sheet</h1>
-                        </div>
-                    </div>
+                <div class="flex w-[30%] max-lg:w-full h-auto flex-col justify-center items-center gap-2"><img
+                        src="figma/Vector.png" class="w-[150px] h-[150px]" alt="">
+                    <h1 class="text-xl  text-center">Access Everything in One App</h1>
+                    <p class="text-center font-thin w-[90%]">Students can view classes, notes, attendance, tests, and
+                        updates — all from the same Syncoes app.</p>
                 </div>
             </div>
         </div>
+
     </section>
 
-    <section id="Demo" class="w-full bg-[#F1F5F9] py-12 sm:py-16 lg:py-20 px-4 sm:px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-8 sm:mb-12">
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4"
-                    style="color: #000000B2; font-family: Poppins;">
-                    Demo Video
-                </h1>
-                <p class="text-base sm:text-lg lg:text-xl" style="font-family: 'Inter';">
-                    This is the video to show the purpose of the app
-                </p>
-            </div>
-
-            <div class="bg-white border-2 rounded-2xl p-4 sm:p-8 lg:p-12">
-                <div class="relative w-full" style="padding-top: 56.25%;">
-                    <iframe class="absolute top-0 left-0 w-full h-full rounded-xl border-2 border-blue-500"
-                        src="https://player.vimeo.com/video/1151357385?" frameborder="0"
-                        allow="autoplay; fullscreen; picture-in-picture" title="Demo Video">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Feedback Section -->
-    <section id="feedback" class="w-full py-12 sm:py-16 lg:py-20 px-4 sm:px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-8 sm:mb-12">
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4"
-                    style="color: #000000B2; font-family: Poppins;">
-                    Help Us Improve This App
-                </h1>
-                <p class="text-sm sm:text-base lg:text-lg max-w-3xl mx-auto" style="font-family: 'Inter';">
-                    This is an early demo version of the app. We are currently collecting feedback from schools and
-                    teachers to understand real needs before full development. Your honest feedback will help us build a
-                    better solution.
-                </p>
-            </div>
-
-            <div class="bg-blue-500 rounded-2xl p-4 sm:p-6 lg:p-8">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
-                    <div class="lg:col-span-2 bg-blue-400/70 rounded-2xl p-4 sm:p-6 space-y-6 sm:space-y-8">
-                        <div>
-                            <h1 class="font-bold text-lg sm:text-xl lg:text-2xl text-white mb-3 sm:mb-4">
-                                1. Overall, how useful does this app feel for school students?
-                            </h1>
-                            <div class="flex gap-2 sm:gap-3">
-                                <button id="star_1" class="transform hover:scale-110 transition-transform">
-                                    <img id="star_1_img" src="icons/star.png" class="w-8 h-8 sm:w-10 sm:h-10"
-                                        alt="Star">
-                                    <img id="star_1_filled" src="icons/star-filled.png"
-                                        class="w-8 h-8 sm:w-10 sm:h-10 hidden" alt="Star filled">
-                                </button>
-                                <button id="star_2" class="transform hover:scale-110 transition-transform">
-                                    <img id="star_2_img" src="icons/star.png" class="w-8 h-8 sm:w-10 sm:h-10"
-                                        alt="Star">
-                                    <img id="star_2_filled" src="icons/star-filled.png"
-                                        class="w-8 h-8 sm:w-10 sm:h-10 hidden" alt="Star filled">
-                                </button>
-                                <button id="star_3" class="transform hover:scale-110 transition-transform">
-                                    <img id="star_3_img" src="icons/star.png" class="w-8 h-8 sm:w-10 sm:h-10"
-                                        alt="Star">
-                                    <img id="star_3_filled" src="icons/star-filled.png"
-                                        class="w-8 h-8 sm:w-10 sm:h-10 hidden" alt="Star filled">
-                                </button>
-                                <button id="star_4" class="transform hover:scale-110 transition-transform">
-                                    <img id="star_4_img" src="icons/star.png" class="w-8 h-8 sm:w-10 sm:h-10"
-                                        alt="Star">
-                                    <img id="star_4_filled" src="icons/star-filled.png"
-                                        class="w-8 h-8 sm:w-10 sm:h-10 hidden" alt="Star filled">
-                                </button>
-                                <button id="star_5" class="transform hover:scale-110 transition-transform">
-                                    <img id="star_5_img" src="icons/star.png" class="w-8 h-8 sm:w-10 sm:h-10"
-                                        alt="Star">
-                                    <img id="star_5_filled" src="icons/star-filled.png"
-                                        class="w-8 h-8 sm:w-10 sm:h-10 hidden" alt="Star filled">
-                                </button>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h1 class="font-bold text-lg sm:text-xl lg:text-2xl text-white mb-3 sm:mb-4">
-                                2. Would your school consider paying for an app like this?
-                            </h1>
-                            <div class="space-y-3">
-                                <button id="button_1"
-                                    class="flex items-center gap-3 sm:gap-4 hover:opacity-80 transition-opacity">
-                                    <div id="div_1"
-                                        class="w-7 h-7 sm:w-8 sm:h-8 bg-blue-400 rounded-xl border-2 border-white flex-shrink-0">
-                                    </div>
-                                    <h1 class="text-base sm:text-lg lg:text-xl text-white text-left">Yes Definitely</h1>
-                                </button>
-                                <button id="button_2"
-                                    class="flex items-center gap-3 sm:gap-4 hover:opacity-80 transition-opacity">
-                                    <div id="div_2"
-                                        class="w-7 h-7 sm:w-8 sm:h-8 bg-blue-400 rounded-xl border-2 border-white flex-shrink-0">
-                                    </div>
-                                    <h1 class="text-base sm:text-lg lg:text-xl text-white text-left">Maybe, if pricing
-                                        is reasonable</h1>
-                                </button>
-                                <button id="button_3"
-                                    class="flex items-center gap-3 sm:gap-4 hover:opacity-80 transition-opacity">
-                                    <div id="div_3"
-                                        class="w-7 h-7 sm:w-8 sm:h-8 bg-blue-400 rounded-xl border-2 border-white flex-shrink-0">
-                                    </div>
-                                    <h1 class="text-base sm:text-lg lg:text-xl text-white text-left">No</h1>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h1 class="font-bold text-lg sm:text-xl lg:text-2xl text-white mb-3 sm:mb-4">
-                                3. Would you like to try a free trial of this app for a short time?
-                            </h1>
-                            <div class="space-y-3">
-                                <button id="button_a"
-                                    class="flex items-center gap-3 sm:gap-4 hover:opacity-80 transition-opacity">
-                                    <div id="div_a"
-                                        class="w-7 h-7 sm:w-8 sm:h-8 bg-blue-400 rounded-xl border-2 border-white flex-shrink-0">
-                                    </div>
-                                    <h1 class="text-base sm:text-lg lg:text-xl text-white text-left">Yes</h1>
-                                </button>
-                                <button id="button_b"
-                                    class="flex items-center gap-3 sm:gap-4 hover:opacity-80 transition-opacity">
-                                    <div id="div_b"
-                                        class="w-7 h-7 sm:w-8 sm:h-8 bg-blue-400 rounded-xl border-2 border-white flex-shrink-0">
-                                    </div>
-                                    <h1 class="text-base sm:text-lg lg:text-xl text-white text-left">Maybe, Later</h1>
-                                </button>
-                                <button id="button_c"
-                                    class="flex items-center gap-3 sm:gap-4 hover:opacity-80 transition-opacity">
-                                    <div id="div_c"
-                                        class="w-7 h-7 sm:w-8 sm:h-8 bg-blue-400 rounded-xl border-2 border-white flex-shrink-0">
-                                    </div>
-                                    <h1 class="text-base sm:text-lg lg:text-xl text-white text-left">No</h1>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-blue-400/70 rounded-2xl p-4 sm:p-6 space-y-6">
-                        <div>
-                            <h1 class="text-white font-bold text-lg sm:text-xl lg:text-2xl mb-3">Your Contact Details
-                                (Optional)</h1>
-                            <textarea id="contact" class="w-full rounded-2xl px-4 py-3 resize-none text-sm sm:text-base"
-                                rows="2" placeholder="Email or Phone number"></textarea>
-                        </div>
-
-                        <div class="flex-1">
-                            <h1 class="text-white font-bold text-lg sm:text-xl lg:text-2xl mb-3">Feedback (Optional)
-                            </h1>
-                            <textarea id="feed" class="w-full rounded-2xl px-4 py-3 resize-none text-sm sm:text-base"
-                                rows="6" placeholder="Your valuable Feedback"></textarea>
-                        </div>
-
-                        <div class="flex justify-center pt-4">
-                            <button id="share"
-                                class="w-full sm:w-auto px-8 py-4 bg-blue-800/60 hover:bg-blue-800 transition-colors rounded-2xl">
-                                <h1 class="text-white text-lg sm:text-xl font-bold">Share Feedback</h1>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="w-full bg-blue-800/90 rounded-t-2xl mt-12 px-4 sm:px-8 py-8">
+    <footer class="w-full bg-[#12141D] h-auto mt-12 px-4 sm:px-8 py-8">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
-                <div>
-                    <h1 class="text-base sm:text-lg lg:text-xl font-mono text-white mb-3">Primary</h1>
-                    <div class="space-y-2">
-                        <a href="#home"
-                            class="block text-sm sm:text-base lg:text-lg font-mono text-blue-400 hover:text-blue-300">Home</a>
-                        <a href="Products.html"
-                            class="block text-sm sm:text-base lg:text-lg font-mono text-blue-400 hover:text-blue-300">Products</a>
-                        <a href="pricing.html"
-                            class="block text-sm sm:text-base lg:text-lg font-mono text-blue-400 hover:text-blue-300">Pricing</a>
-                        <a href="ourwork.html"
-                            class="block text-sm sm:text-base lg:text-lg font-mono text-blue-400 hover:text-blue-300">Our
-                            Work</a>
-                        <a href="contact.html"
-                            class="block text-sm sm:text-base lg:text-lg font-mono text-blue-400 hover:text-blue-300">Contact
-                            Us</a>
+                <div class="gap-2">
+                    <div><img src="figma/syncoesdot.png" alt=""></div>
+                    <h1 class="font-thin text-white ml-1 mt-8">A ready-to-use education app platform for schools and
+                        coaching
+                        institutes.
+                    </h1>
+                    <div class="flex mt-8 gap-2">
+                        <a href="https://x.com/syncoes9112">
+                            <div><img src="icons/twitter.png" alt=""></div>
+                        </a>
+                        <a href="https://www.linkedin.com/company/syncoes/">
+
+                            <div><img src="icons/link.png" alt=""></div>
+                        </a>
+                        <a href="https://www.facebook.com/share/1CDrksweNf/">
+
+                            <div><img src="icons/2.png" alt=""></div>
+                        </a>
+
+                        <a href="https://www.instagram.com/syncoes/">
+
+                            <div><img src="icons/insta.png" alt=""></div>
+                        </a>
+                        <a href="https://www.youtube.com/@syncoes">
+
+                            <div><img src="icons/yt.png" alt=""></div>
+                        </a>
+
                     </div>
                 </div>
 
-                <div>
-                    <h1 class="text-base sm:text-lg lg:text-xl font-mono text-white mb-3">Others</h1>
+                <div class="items-end flex flex-col max-sm:items-center">
+                    <h1 class="text-base sm:text-lg lg:text-xl font-mono text-white mb-3 mr-2">Company</h1>
                     <div class="space-y-2">
                         <a href="#"
-                            class="block text-sm sm:text-base lg:text-lg font-mono text-blue-400 hover:text-blue-300">Privacy
-                            Policy</a>
+                            class="block text-sm sm:text-base lg:text-lg font-medium text-gray-400 hover:text-blue-300">Services
+                        </a>
                         <a href="#"
-                            class="block text-sm sm:text-base lg:text-lg font-mono text-blue-400 hover:text-blue-300">Guidelines</a>
+                            class="block text-sm sm:text-base lg:text-lg font-medium text-gray-400 hover:text-blue-300">Resources</a>
                         <a href="#"
-                            class="block text-sm sm:text-base lg:text-lg font-mono text-blue-400 hover:text-blue-300">Terms
-                            of Service</a>
-                        <a href="#"
-                            class="block text-sm sm:text-base lg:text-lg font-mono text-blue-400 hover:text-blue-300">Credits</a>
+                            class="block text-sm sm:text-base lg:text-lg font-medium text-gray-400 hover:text-blue-300">About
+                            Us
+                        </a>
+
                     </div>
                 </div>
 
-                <div class="col-span-2 sm:col-span-1">
-                    <h1 class="text-base sm:text-lg lg:text-xl font-mono text-white mb-3">Contact</h1>
-                    <p class="text-sm sm:text-base lg:text-lg font-mono text-white mb-4">
-                        Email:<br>syncoes93@gmail.com
-                    </p>
-                    <h1 class="text-base sm:text-lg lg:text-xl font-mono text-white mb-3">Socials</h1>
-                    <div class="flex gap-3">
-                        <a href="https://www.instagram.com/syncoes/" class="hover:opacity-80 transition-opacity">
-                            <img src="icons/icons8-instagram-250.png" class="w-7 h-7 sm:w-8 sm:h-8" alt="Instagram">
+                <div class="col-span-2 sm:col-span-1 ">
+                    <h1 class="text-base sm:text-lg lg:text-xl font-mono text-white mb-3 mr-2">Help</h1>
+                    <div class="space-y-2">
+                        <a href="#"
+                            class="block text-sm sm:text-base lg:text-lg font-medium text-gray-400 hover:text-blue-300">Customer
+                            Support
                         </a>
-                        <a href="https://www.linkedin.com/company/syncoes/" class="hover:opacity-80 transition-opacity">
-                            <img src="icons/discord.png" class="w-8 h-7 sm:w-9 sm:h-8" alt="linkedin">
+                        <a href="#"
+                            class="block text-sm sm:text-base lg:text-lg font-medium text-gray-400 hover:text-blue-300">Terms
+                            & Conditions</a>
+                        <a href="#"
+                            class="block text-sm sm:text-base lg:text-lg font-medium text-gray-400 hover:text-blue-300">Privacy
+                            Policy
+                            Us
                         </a>
-                        <a href="https://x.com/syncoes9112" class="hover:opacity-80 transition-opacity">
-                            <img src="icons/twitter.png" class="w-7 h-7 sm:w-8 sm:h-8" alt="Twitter">
-                        </a>
+
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-
     <script>
         if (typeof emailjs === 'undefined') {
             console.error('EmailJS library not found');
@@ -1020,6 +674,7 @@
             overlay?.addEventListener('click', closeSidebar);
         })();
     </script>
+
 </body>
 
 </html>
